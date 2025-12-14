@@ -1,0 +1,19 @@
+**/__pycache__/
+**/build/
+**/dist/
+**/*egg-info
+.gradio/
+
+# ignore scripts
+_*.sh
+__*.png
+__*.jpg
+__*.webp
+___*.py
+**/___*.py
+
+# ignore pcds
+*.ply
+
+# ignore data
+/data

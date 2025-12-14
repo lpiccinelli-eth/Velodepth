@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pyright]
+include = ["velodepth"]
+typeCheckingMode = "off"
+
+[project]
+name = "velodepth"
+version = "0.1"
+authors = [{name = "Luigi Piccinelli", email = "lpiccinelli@ethz.ch"}]
+description = "Video Depth Propagation"
+readme = "README.md"
+license = { text="Creatives Common BY-NC 4.0 license"}
+requires-python = ">=3.11.0"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.setuptools.packages.find]
+include = ["velodepth*"]

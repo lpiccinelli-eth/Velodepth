@@ -1,0 +1,148 @@
+{
+    "generic": {
+        "seed": 42,
+        "deterministic": true,
+        "name_page": "velodepth"
+    },
+    "training": {
+        "f16": "f16",
+        "losses": {
+            "depth": {
+                "name": "Dummy",
+                "weight": 1.0
+            },
+            "camera": {
+                "name": "Dummy",
+                "weight": 1.0
+            },
+            "edge": {
+                "name": "Dummy",
+                "weight": 1.0
+            },
+            "features": {
+                "name": "Dummy",
+                "weight": 1.0
+            },
+            "flow": {
+                "name": "Dummy",
+                "weight": 1.0
+            },
+            "self": {
+                "name": "Dummy",
+                "weight": 1.0
+            }
+        }
+    },
+    "data": {
+        "keepGT": 0,
+        "image_shape": [518, 518],
+        "resize_method": "contextcrop",
+        "normalization": "imagenet",
+        "pair": 1,
+        "flow": "of",
+        "mini": 1.0,
+        "num_frames": 2,
+        "sampling":{
+        },
+        "train_datasets": [
+        ],
+        "val_datasets": [
+            "ScanNetVid",
+            "VKITTI",
+            "Bonn",
+            "TUM",
+            "Sintel"
+        ],
+        "data_root": "datasets",
+        "crop": "garg",
+        "augmentations": {
+            "random_scale": 2.0,
+            "only_zoom": true,
+            "random_translate_x": 0.04,
+            "random_translate_y": 0.01,
+
+            "scale_p": 0.0,
+            "translate_p": 0.0,
+            "random_rotation": 0.0,
+            "rotation_p": 0.0,
+            "random_shear": 0.0,
+            "affine_p": 0.0,
+
+            "random_jitter": 0.1,
+            "jitter_p": 0.5,
+            "random_blur": 2.0,
+            "blur_p": 0.1,
+            "random_gamma": 0.2,
+            "gamma_p": 0.5,
+            "grayscale_p": 0.1,
+            "flip_p": 0.5,
+            "flipt_p": 0.3,
+            "cut_p": 0.0,
+            "invert_p": 0.0,
+
+            "shape_mult": 14,
+            "noise_pad": 1.0,
+            "test_context": 1.0,
+            "shape_constraints": {
+                "ratio_bounds": [0.5, 2.5],
+                "pixels_max": 600000.0,
+                "pixels_min": 200000.0,
+                "height_min": 15,
+                "width_min": 15,
+                "shape_mult": 14,
+                "sample": true
+            }
+        },
+        "shape_constraints": {
+            "ratio_bounds": [0.5, 2.5],
+            "pixels_max": 600000.0,
+            "pixels_min": 200000.0,
+            "height_min": 15,
+            "width_min": 15,
+            "shape_mult": 14,
+            "sample": true
+        }
+    },
+    "model": {
+        "name": "VeloDepth",
+        "num_heads": 8,
+        "expansion": 4,
+        "layer_scale": 1.0,
+        "pixel_decoder": {
+            "name": "Decoder",
+            "hidden_dim": 512,
+            "dropout": 0.0,
+            "depths": [2, 2, 2],
+            "out_dim": 64,
+            "kernel_size": 3,
+            "num_prompt_blocks": 1,
+            "num_fusion_block": 1
+        },
+        "pixel_encoder": {
+            "lr": 3e-06,
+            "wd": 0.1,
+            "name": "dinov2_vitl14",
+            "frozen_stages": 0,
+            "num_register_tokens": 0,
+            "use_norm": true,
+            "freeze_norm": true,
+            "pretrained": null,
+            "stacking_fn": "last",
+            "output_idx": [6, 12, 18, 24]
+        },
+        "residual_encoder": {
+            "lr": 1e-4,
+            "wd": 0.01,
+            "name": "convnextv2_tiny",
+            "frozen_stages": 0,
+            "pretrained": "timm",
+            "num_levels": 1
+        },
+        "flow_encoder": {
+            "name": "convnextv2_nano",
+            "frozen_stages": -1,
+            "pretrained": "timm",
+            "num_levels": 2
+        }
+    }
+}
