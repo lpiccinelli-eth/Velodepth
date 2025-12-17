@@ -52,7 +52,7 @@ Requirements are not hard requirements, but there might be some differences (not
 - Python 3.11+ 
 - CUDA 12.1+
 
-Install the environment needed to run UniK3D with:
+Install the environment needed to run VeloDepth with:
 ```shell
 export VENV_DIR=<YOUR-VENVS-DIR>
 export NAME=velodepth
@@ -79,7 +79,7 @@ source $VENV_DIR/$NAME/bin/activate -> conda activate $NAME
 
 Run VeloDepth on the given assets to test your installation (you can check this script as guideline for further usage):
 ```shell
-python ./scripts/demo.py --video bears.mp4 --out_dir ./data
+python ./scripts/demo.py --video ./assets/demo/bears.mp4 --out_dir ./data
 ```
 If everything runs correctly, `demo.py` will save RGBs, Depth maps for each frame of the video `bears.mp4`
 
@@ -191,7 +191,7 @@ See also [`./scripts/demo.py`](./scripts/demo.py)
 
 ## Model
 
-The available model is the propagatoin of [UniK3D](https://github.com/lpiccinelli-eth/UniK3D), i.e. the base keyframe monodepth model.
+The available model is the propagation of [UniK3D](https://github.com/lpiccinelli-eth/UniK3D), i.e. the base keyframe monodepth model.
 
 Please visit [Hugging Face](https://huggingface.co/lpiccinelli) or click on the links above to access the repo models with weights.
 You can load VeloDepth as the following:
