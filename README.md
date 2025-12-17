@@ -28,6 +28,7 @@
 
 ## News and ToDo
 
+There is a inconsistency between keyframe base model on keyframe in this and base model run from the original repo (creating blurry and worse init for VeloDepth). I am working on it and solve it ASAP.
 - [] Releasing training code.
 - [] Releasing evaluation datasets.
 - [x] `14.12.2025`: Model and code released.
@@ -236,7 +237,7 @@ If you find any bug in the code, please report to Luigi Piccinelli (lpiccinelli@
 
 If you find our work useful in your research please consider citing our publications:
 ```bibtex
-@inproceedings{piccinelli2025unik3d,
+@inproceedings{piccinelli2026velodepth,
     title     = {Video Depth Propagation},
     author    = {Piccinelli, Luigi and Wandel, Thiemo and  Sakaridis, Christos and Abbeloos, Wim and Van Gool, Luc},
     booktitle = {Proceedings of the International Conference on 3D Vision (3DV)},
