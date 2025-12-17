@@ -28,7 +28,6 @@
 
 ## News and ToDo
 
-There is a inconsistency between keyframe base model on keyframe in this and base model run from the original repo (creating blurry and worse init for VeloDepth). I am working on it and solve it ASAP.
 - [] Releasing training code.
 - [] Releasing evaluation datasets.
 - [x] `14.12.2025`: Model and code released.
