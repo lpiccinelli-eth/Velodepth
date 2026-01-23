@@ -9,7 +9,7 @@ class TUM(SequenceDataset):
     test_split = "val.txt"
     train_split = "train.txt"
     sequences_file = "sequences.json"
-    hdf5_paths = ["TUM_long.hdf5"]
+    hdf5_paths = ["TUM.hdf5"]
     
     def __init__(
         self,

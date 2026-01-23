@@ -28,8 +28,8 @@
 
 ## News and ToDo
 
-- [] Releasing training code.
-- [] Releasing evaluation datasets.
+- Releasing training code.
+- [x] `22.01.2026`: Releasing evaluation datasets.
 - [x] `14.12.2025`: Model and code released.
 - [x] `04.11.2025`: VeloDepth is accepted at 3DV 2026!
 

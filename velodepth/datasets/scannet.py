@@ -57,7 +57,7 @@ class ScanNetVid(SequenceDataset):
     test_split = "val.txt"
     train_split = "train.txt"
     sequences_file = "sequences_.json"
-    hdf5_paths = ["ScanNet_V.hdf5"]
+    hdf5_paths = ["ScanNet.hdf5"]
     
     def __init__(
         self,

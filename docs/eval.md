@@ -8,7 +8,7 @@ Download the processed datasets from [Huggingface Datasets](https://huggingface.
 
 ```bash
 export DATAROOT=$HOME/data/eval
-huggingface-cli download lpiccinelli/velodepth --repo-type dataset --local-dir $DATAROOT --local-dir-use-symlinks False
+huggingface-cli download lpiccinelli/velodepth-evaluation --repo-type dataset --local-dir $DATAROOT --local-dir-use-symlinks False
 ```
 
 ## Configuration
